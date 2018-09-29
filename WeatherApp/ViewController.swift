@@ -7,9 +7,22 @@
 //
 
 import UIKit
+class roundedButton: UIButton {
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        layer.cornerRadius = 25
+        layer.borderColor = isEnabled ? tintColor.cgColor : UIColor.lightGray.cgColor
+    }
+}
 
 class ViewController: UIViewController {
 
+
+    @IBOutlet weak var label: UILabel!
+    @IBAction func slider(_ sender: UISlider)
+    {
+        label.text = String(sender.value)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -20,6 +33,7 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    
 
 }
 
